@@ -5,13 +5,14 @@ import bcrypt from "bcryptjs";
 
 export const register = async (req, res) => {
   const { email, password, name, role, photo, gender } = req.body;
+
   try {
     let user = null;
 
     if (role === "patient") {
-      user = User.findone({ email });
+      user = await User.findOne({ email });
     } else if (role === "doctor") {
-      user = await User.findone({ email });
+      user = await Doctor.findOne({ email });
     }
 
     // check if user exist
