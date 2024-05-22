@@ -8,7 +8,7 @@ const Login = () => {
     password:'',
   })
 
-  const handleInputChange = e=>{
+  const handleInputChange = (e)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
   }
 
@@ -38,7 +38,7 @@ const Login = () => {
             type="password" 
             placeholder="Password" 
             name="password" 
-            value={formData.email} 
+            value={formData.password} 
             onChange={handleInputChange} 
             className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor
             placeholder:text-textColor  cursor-pointer"
