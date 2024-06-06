@@ -91,7 +91,7 @@ export const getDoctorProfile = async(req,res)=>{
   const doctorId = req.userId;
 
   try {
-    const doctor = await Doctor.findById(userId);
+    const doctor = await Doctor.findById(doctorId);
 
     if (!doctor) {
       return res
@@ -110,6 +110,6 @@ export const getDoctorProfile = async(req,res)=>{
   } catch (err) {
     res
       .status(500)
-      .json({ success: false, message: "something we wrong, cannot get" });
+      .json({ success: false, message: "something wrong, we cannot get" });
   }
 }
